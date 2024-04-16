@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.concurrent.Executors
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             lifecycleScope.launch(Dispatchers.Default){
                 // Simulate process in background thread
                 for (i in 0..10){
-                    delay (500)
+                    delay(500)
                     val percentage = i * 10
                     withContext(Dispatchers.Main){
                         // Update UI in main thread
